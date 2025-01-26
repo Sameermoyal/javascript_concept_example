@@ -1,0 +1,37 @@
+
+// A Promise in JavaScript is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. It provides a cleaner and more manageable way to handle asynchronous tasks like fetching data, waiting for a timeout, or reading a file.
+
+
+
+// Key Features of Promises
+// States of a Promise:
+
+// Pending: The promise is still running and hasn't completed yet.
+// Fulfilled: The operation completed successfully, and resolve() was called.
+// Rejected: The operation failed, and reject() was called.
+// Chaining: Promises allow you to chain .then() calls to handle results or errors in a sequential manner.
+
+// Built-In Error Handling: You can handle errors gracefully using .catch().
+
+// Why Use Promises?
+// To avoid "callback hell" (deeply nested callbacks).
+// To write cleaner and more readable asynchronous code.
+// To handle asynchronous processes more effectively.
+
+
+
+function order(food){
+    return new Promise((resolve,reject)=>{
+        console.log("preparing food")
+        
+     setTimeout(()=>{
+            if("pizza"===food){
+            resolve("pizza ready")
+        }else{
+            reject("Sorrey pizza not ready")
+        }
+     },1000)
+    })
+}
+
+order("pizza").then((m)=>console.log(m)).catch((error)=>console.log(error))
