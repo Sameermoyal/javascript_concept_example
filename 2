@@ -1,0 +1,56 @@
+// In JavaScript, call, apply, and bind are methods that allow you to control the context (this) of a function. They’re especially useful when you want to borrow methods or explicitly set this in a function
+
+// The call method invokes a function with a specified this value and arguments passed individually.
+
+//func.call(thisArg, arg1, arg2, ...);
+
+
+
+const obj={
+    name:"sameer",
+    lastname:"moyal"
+}
+
+function abc(arg,p){
+    console.log(`hii ${this.name} ${this.lastname} ${arg} ${p}`)
+}
+
+abc.call(obj,"how are you ","?")
+
+
+
+//The apply method is similar to call, but it takes arguments as an array (or array-like object).
+
+//func.apply(thisArg, [arg1, arg2, ...]);
+
+
+const obj={
+    name:"sameer",
+    lastname:"moyal"
+}
+
+function abc(arg1,arg2,arg3){
+    console.log(`hii ${this.name} ${this.lastname} ${arg1} ${arg2} ${arg3} `)
+}
+
+abc.apply(obj,["how","are","you"])
+
+
+
+
+//The bind method doesn’t immediately invoke the function. Instead, it returns a new function with a specific this value and optionally prefilled arguments.
+
+
+//const boundFunc = func.bind(thisArg, arg1, arg2, ...);
+
+const obj={
+    name:"sameer",
+    lastname:"moyal"
+}
+
+function abc(arg1,arg2,arg3){
+    console.log(`hii ${this.name} ${this.lastname} ${arg1} ${arg2} ${arg3} `)
+}
+
+const res= abc.bind(obj,"how","are","you")
+res()
