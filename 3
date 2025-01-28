@@ -1,0 +1,21 @@
+function fetchDataWithCallback(url, callback) {
+  const xhr = new XMLHttpRequest(); // Create a new XMLHttpRequest object
+
+  // This function executes when the request is complete
+  xhr.onload = function() {
+    if (xhr.status >= 200 && xhr.status < 300) {
+      callback(null, JSON.parse(xhr.responseText)); // Pass response data to the callback
+    } else {
+      callback(new Error(`Request failed with status ${xhr.status}`), null); // Pass an error to the callback
+    }
+  };
+
+  // This function executes in case of a network error
+  xhr.onerror = function() {
+    callback(new Error("Network error"), null); // Pass a network error to the callback
+  };
+
+  // The URL is used here in the `open` method to specify where the request is sent
+  xhr.open("GET", url); // The `url` parameter is used to configure the request
+  xhr.send(); // Send the HTTP request
+}
