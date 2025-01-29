@@ -1,0 +1,71 @@
+// RegExp (Regular Expressions) is a powerful pattern-matching tool used for searching, replacing, and validating text. 
+//Regular expressions help find specific sequences of characters within a string.
+
+// Common Regex Patterns
+// \d – Matches any digit (0-9)
+// \w – Matches any word character (letters, numbers, underscore)
+// \s – Matches whitespace (space, tab, newline)
+// . – Matches any character except a newline
+// ^ – Matches the start of a string
+// $ – Matches the end of a string
+// + – Matches one or more of the preceding character
+// * – Matches zero or more of the preceding character
+// ? – Matches zero or one occurrence of the preceding character
+// {n,m} – Matches between n and m occurrences
+// | – Acts as OR (e.g., a|b matches "a" or "b")
+// [...] – Character set (e.g., [aeiou] matches any vowel)
+
+
+
+//let regex = new RegExp("hello");  // ===   let regex = /hello/;
+
+
+//test() – Returns true or false if there is a match.
+// let regex = /hello/;
+// console.log(regex.test("hello world")); // true
+
+//match() – Returns an array of matches or null if no match is found.
+
+// let str='sameer khan';
+// let result =str.match(/khan/)
+
+// console.log(result);
+
+
+
+//search() – Returns the index of the first match or -1 if not found.
+
+// let str='hello sameer';
+// console.log(str.search(/sameer/))
+
+//replace() – Replaces matched text with another string.
+// let str = "hello world";
+// console.log(str.replace(/hello/, "hi")); // "hi world"
+
+
+// split() – Splits a string based on the regex pattern
+// let str = "apple,banana,orange";
+// console.log(str.split(/,/)); // ["apple", "banana", "orange"]
+
+
+
+// let email = "user@example.com";
+// let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+// console.log(regex.test(email)); // true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
