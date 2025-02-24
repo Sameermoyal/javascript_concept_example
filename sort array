@@ -1,0 +1,27 @@
+arr= [3,2,4,6,8,9,2,2,2,2,1]
+
+for(let i=0;i<arr.length;i++){
+  let temp=arr[i]
+  for(let j=i+1;j<arr.length;j++){
+    if(temp>arr[j]){
+      let c=temp
+      temp=arr[j]
+      arr[j]=c
+      
+    }
+  }
+  arr[i]=temp
+}
+
+
+
+const uniqueArray = arr.filter((val,ind,self)=>self.indexOf(val)===ind);
+
+console.log(uniqueArray); // Output: [1, 2, 3, 4, 5]
+
+uniqueArr=[...new Set(arr)]
+
+
+
+
+console.log(uniqueArr); // Output: [1, 2, 3, 4, 5]
